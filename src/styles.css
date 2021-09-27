@@ -6,7 +6,7 @@
 body {
   max-width: 600px;
   margin: auto;
-  background-color: #ddd6fe;
+  background-color: #f3e8ff;
 }
 
 .heading {
@@ -14,11 +14,36 @@ body {
   border: 2px solid;
   border-radius: 1rem;
   margin: 1rem;
-  background-color: #a78bfa;
+  background-color: #e9d5ff;
 }
 
 .para {
   font-weight: bold;
   padding: 1.5rem;
   font-size: large;
+}
+
+hr {
+  border: 0.6px solid black;
+}
+
+button {
+  margin: 0.7rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  background-color: #a855f7;
+  border: 1.5px solid black;
+  color: white;
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+li {
+  background-color: #7e22ce;
+  border: 1px solid black;
+  margin-bottom: 1.2rem;
+  border-radius: 1rem;
+  color: white;
 }

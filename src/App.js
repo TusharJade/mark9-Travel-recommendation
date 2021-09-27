@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./styles.css";
 
 var location = {
@@ -42,7 +43,7 @@ var location = {
       Rating: "5/4.5"
     }
   ],
-  Jammuandkashmir: [
+  kashmir: [
     {
       Name: "Srinagar-Heaven on earth",
       Description:
@@ -58,7 +59,32 @@ var location = {
   ]
 };
 
+var genretick = Object.keys(location);
+
 export default function App() {
+  var [place, placelist] = useState(location.Maharashtra);
+
+  function generhandler(genre) {
+    placelist(location[genre]);
+  }
+
+  function getTravelsPost(travels) {
+    var name = travels.Name;
+    var desc = travels.Description;
+    var rating = travels.Rating;
+    var place = (
+      <li>
+        <div style={{ padding: "0rem 1rem" }}>
+          <h3 style={{ marginBottom: "0.5rem" }}>{name}</h3>
+
+          <p style={{ fontSize: "0.9rem" }}>{desc}</p>
+          <p>{rating}</p>
+        </div>
+      </li>
+    );
+    return place;
+  }
+
   return (
     <div className="App">
       <h2 className="heading">Travel recommendations</h2>
@@ -66,6 +92,25 @@ export default function App() {
       <p className="para">
         Here are some of my favorite places which I visited.
       </p>
+      <div>
+        {genretick.map((genre) => {
+          return (
+            <button
+              key={genre}
+              className="btn"
+              onClick={() => generhandler(genre)}
+            >
+              {genre}
+            </button>
+          );
+        })}
+      </div>
+      <hr />
+      <ul>
+        {place.map((travels) => {
+          return getTravelsPost(travels);
+        })}
+      </ul>
     </div>
   );
 }
