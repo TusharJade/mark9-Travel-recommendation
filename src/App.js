@@ -55,6 +55,12 @@ var location = {
       Description:
         "Kargil is a small town in the Kargil district of Ladakh region, which brings shivers down the spine of the Indian Citizens. This part of the Ladakh is a must visit for every first time traveler for capturing the undaunted beauty of the place.",
       Rating: "5/5"
+    },
+    {
+      Name: "Shalimar Bagh",
+      Description:
+        "Shalimar Bagh is one of the beautiful bagh I ever seen, Bagh was built by Mughal Emperor Jahangir, for his wife Nur Jahan, in 1619. You must need to visit this if you will go to Kashmir",
+      Rating: "5/4"
     }
   ]
 };
@@ -62,7 +68,7 @@ var location = {
 var genretick = Object.keys(location);
 
 export default function App() {
-  var [place, placelist] = useState(location.Maharashtra);
+  var [place, placelist] = useState(location.UttarPradesh);
 
   function generhandler(genre) {
     placelist(location[genre]);
